@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>For Hanna ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0f19;           /* normal background */
+    --bg-dim:#070b14;       /* darker background after tap */
+    --text:#f1f5f9;
+    --muted:#cbd5e1;
+    --paper:#0e1425;        /* dark card */
+    --paperBorder:#1d2742;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;padding:0;font-family:Poppins,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    color:var(--text);
+    background:
+      radial-gradient(1000px 600px at 80% -10%, rgba(255,77,109,.10), transparent 60%),
+      radial-gradient(900px 500px at 10% -5%, rgba(124,58,237,.10), transparent 60%),
+      var(--bg);
+    transition:background .45s ease;
+  }
+  body.dim{
+    background:
+      radial-gradient(1000px 600px at 80% -10%, rgba(255,77,109,.06), transparent 60%),
+      radial-gradient(900px 500px at 10% -5%, rgba(124,58,237,.06), transparent 60%),
+      var(--bg-dim);
+  }
+
+  header{padding:36px 0 8px;text-align:center}
+  .title{font-size:44px;margin:0 0 6px;font-weight:800}
+  .subtitle{margin:0;color:var(--muted)}
+  .container{max-width:980px;margin:0 auto;padding:0 20px}
+
+  .scene{display:grid;place-items:center;min-height:70vh;position:relative;z-index:1}
+  .tap{
+    font-size:22px;padding:20px 36px;border-radius:14px;
+    background:linear-gradient(135deg,#ff4d6d,#ff9aa2);
+    color:#fff;font-weight:800;cursor:pointer;
+    box-shadow:0 14px 32px rgba(255,77,109,.35);
+    transition:transform .2s ease, box-shadow .25s ease;
+  }
+  .tap:hover{transform:scale(1.04)}
+  .tap:active{transform:scale(.98)}
+
+  .letter{
+    display:none;margin:22px auto 0;width:min(860px,92vw);
+    background:linear-gradient(180deg,#0e1425,#0a0e19);
+    border:1px solid var(--paperBorder);
+    border-radius:22px;padding:28px;line-height:1.85;
+    box-shadow:0 18px 44px rgba(0,0,0,.35);
+    animation:fadeIn .55s ease forwards;
+  }
+  .letter h3{margin:0 0 10px}
+  .letter p{margin:0 0 14px}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+  /* floating hearts */
+  .float-hearts{pointer-events:none;position:fixed;inset:0;overflow:hidden;z-index:0}
+  .heart{position:absolute;font-size:14px;opacity:.7;animation:rise 12s linear infinite}
+  @keyframes rise{0%{transform:translateY(100vh) scale(.8) rotate(0deg)}100%{transform:translateY(-10vh) scale(1) rotate(360deg)}}
+
+  footer{padding:34px 0;text-align:center;color:#9aa6b2}
+</style>
+</head>
+<body>
+<div class="float-hearts" id="bgHearts"></div>
+
+<header>
+  <h1 class="title">For Hanna ❤️</h1>
+  <p class="subtitle">From Raamish, with all my heart</p>
+</header>
+
+<main class="container">
+  <section class="scene">
+    <div class="tap" id="tapBtn">Tap here 💌</div>
+
+    <article class="letter" id="letter">
+      <h3>WE DID IT!!!!!!</h3>
+
+      <p>Probably the hardest most depressing gloomy boring month of my life but we did it :((( you’re back from vacation and I can’t even explain how happy my heart feels right now. Even though I know you really enjoyed your first vacation in a long time, I really missed my pookie jaan sososo much :(</p>
+
+      <p>Ever since the moment we hugged goodbye in August I’ve been yearning like crazy for you :( As the month went on... and on..... and on..... more and more I realized how much I took us for granted. Every day without you made me see how much of my strength comes from you :( it genuinely felt like a piece of me went missing and nothing could’ve made me feel whole again, except for seeing you in real life and feeling your physical touch. I want you to know you have played such a huge role in making me the man I am today, and you’ve been one of the biggest blessings that الله has given me in my life &lt;33333</p>
+
+      <p>I love you more than words could ever express. You’re my safe place, my home, even when we’re far apart. You’re the first thought that lights up my mornings and the last dua on my lips at night. Even when you’re far away, you live in the quiet spaces between my heartbeats.</p>
+
+      <p>I love you for the sake of الله and I will never leave your side. I’ll try my best and work hard for us and to provide for my beautiful wife while loving you unconditionally, and treating you like the queen you are. You are the only one who I choose to give all my love to &lt;333</p>
+
+      <p>Now that we’re back, I’m so excited for all the fun things and adventures we’re gonna have!! And you’re NEVER going away on vacation like that ever again... UNLESS we go together!!</p>
+
+      <p><strong>Hanna Sobhi</strong>, حياتي, my existence, my dream, my everything, I love you all the way to the ends of the universe.</p>
+
+      <p>You really are my forever and always.</p>
+
+      <p><em>Love,<br>Raamish Abaldie</em></p>
+    </article>
+  </section>
+</main>
+
+<footer>Made with love by Raamish • ♡</footer>
+
+<script>
+  // floating hearts
+  const bg = document.getElementById('bgHearts');
+  const heartChars = ['❤️','🩷','💖','💘','💝','💕'];
+  for (let i=0;i<40;i++){
+    const s=document.createElement('div');
+    s.className='heart';
+    s.textContent=heartChars[Math.floor(Math.random()*heartChars.length)];
+    s.style.left=Math.random()*100+'vw';
+    s.style.animationDelay=(Math.random()*12)+'s';
+    s.style.fontSize=(12+Math.random()*22)+'px';
+    bg.appendChild(s);
+  }
+
+  // tap-to-reveal: darken background + show letter
+  const tap = document.getElementById('tapBtn');
+  const letter = document.getElementById('letter');
+  tap.addEventListener('click', ()=>{
+    document.body.classList.add('dim');  // darker gradient
+    tap.style.display='none';
+    letter.style.display='block';        // fades in via animation
+    letter.scrollIntoView({behavior:'smooth', block:'center'});
+  });
+</script>
+</body>
+</html>
